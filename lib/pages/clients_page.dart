@@ -27,7 +27,6 @@ class _ClientsPageState extends State<ClientsPage> {
       drawer: const HamburgerMenu(),
       body: Consumer<Clients>(
         builder: (BuildContext context, Clients list, Widget? child) {
-          print(list.clients);
           return ListView.builder(
             itemCount: list.clients.length,
             itemBuilder: (context, index) {
@@ -40,7 +39,7 @@ class _ClientsPageState extends State<ClientsPage> {
                   iconColor: Colors.indigo,
                 ),
                 onDismissed: (direction) {
-                  list.clients.removeAt(index);
+                  list.remove(index);
                 },
               );
             },

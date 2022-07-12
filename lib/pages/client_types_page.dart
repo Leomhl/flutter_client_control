@@ -39,7 +39,7 @@ class _ClientTypesPageState extends State<ClientTypesPage> {
                   iconColor: Colors.deepOrange,
                 ),
                 onDismissed: (direction) {
-                  listTypes.types.removeAt(index);
+                  listTypes.remove(index);
                 },
               );
             },
@@ -86,13 +86,13 @@ class _ClientTypesPageState extends State<ClientTypesPage> {
                       SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                            onPressed: () async {
-                              final IconData? result = await showIconPicker(context: context, defalutIcon: selectedIcon);
-                              setState(() {
-                                selectedIcon = result;
-                              });
-                            },
-                            child: const Text('Selecionar icone')
+                          onPressed: () async {
+                            final IconData? result = await showIconPicker(context: context, defalutIcon: selectedIcon);
+                            setState(() {
+                              selectedIcon = result;
+                            });
+                          },
+                          child: const Text('Selecionar icone')
                         ),
                       ),
                     ]);
@@ -112,7 +112,7 @@ class _ClientTypesPageState extends State<ClientTypesPage> {
               }
             ),
             TextButton(
-              child: const Text("Calcelar"),
+              child: const Text("Cancelar"),
               onPressed: () async {
                 selectedIcon = null;
                 Navigator.pop(context);
