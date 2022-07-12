@@ -11,5 +11,6 @@ class Clients extends ChangeNotifier {
 
   void add(Client client) {
     clients.add(client);
+    notifyListeners();
   }
 }
